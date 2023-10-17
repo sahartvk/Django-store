@@ -1,0 +1,41 @@
+<div dir="rtl" class="container custom-container">
+
+<!--    <button class="accordion" style="text-align: right !important" dir="rtl">فیلتر</button>-->
+    <button id="filterAccordion" class="accordion" style="text-align: right !important" dir="rtl">فیلتر</button>
+    <div class="panel">
+        {% for column in datatable %}
+            <div class="filter-input">
+             <label for="{{ column.label }}">{{ column.label }}</label>
+                <input type="text" class="search-input display responsive" search_for="{{ column.label }}" id="{{ column.label }}" placeholder="جستجو {{ column.label }}" search_for="{{ column.label }}">
+
+<!--             {% if column.name in numeric_fields %}-->
+<!--                 <input type="number" class="filter-range" data-column="{{ column.label }}" placeholder="حداقل مقدار">-->
+<!--                 <input type="number" class="filter-range" data-column="{{ column.label }}" placeholder="حداکثر مقدار">-->
+<!--             {% else %}-->
+<!--             <input type="text" class="search-input display responsive" search_for="{{ column.label }}" id="{{ column.label }}" placeholder="جستجو {{ column.label }}" search_for="{{ column.label }}">-->
+<!--             {% endif %}-->
+            </div>
+      {% endfor %}
+
+        <button id="apply-filter" class="button">اعمال فیلتر</button>
+        <button id="clear-filter" class="button">پاک کردن فیلتر</button>
+    </div>
+
+    <div class="table-container">
+        <table dir="rtl" class="display datatable responsive nowrap" width="100%"
+               data-ajax-method="{{ datatableview_options.request_method }}"
+               id="{{ datatableview_options.id }}"
+               data-result-counter-id="{{ datatableview_options.result_counter_id }}"
+               data-page-length="{{ datatableview_options.page_length }}">
+            <thead>
+                <tr>
+                    {% for column in datatable %}
+                        {{ column }}
+                    {% endfor %}
+                </tr>
+            </thead>
+        </table>
+    </div>
+
+    <button id="send-data" type="button">ذخیره محصولات</button>
+</div>

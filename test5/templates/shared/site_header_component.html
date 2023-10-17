@@ -1,0 +1,25 @@
+<header id="header"><!--header-->
+
+    <div class="header-middle"><!--header-middle-->
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-8 header-middle-menu">
+                    <div class="shop-menu pull-right">
+                        <ul class="nav navbar-nav">
+                            <li><a href="{% url 'home_page' %}" class="active">خـانه</a></li>
+                            <li><a href="#">حساب کاربـری</a></li>
+                            {% if request.user.is_authenticated %}
+                                <li><a href="{% url 'logout_page'%}">خروج</a></li>
+                            {% else %}
+                                <li><a href="{% url 'register_page' %}">ثبت نام</a></li>
+                                <li><a href="{% url 'login_page' %}">ورود</a></li>
+                            {%endif%}
+                            <li><a href="{% url 'products_page' %}">محصولات</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div><!--/header-middle-->
+
+</header><!--/header-->

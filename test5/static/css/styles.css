@@ -1,0 +1,140 @@
+
+@font-face {
+    font-family: 'Vazir';
+    src: url('../fonts/Vazir.eot');
+    src: url('../fonts/Vazir.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/Vazir.woff') format('woff'),
+    url('../fonts/Vazir.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    font-family: 'Vazir';
+}
+
+input, textarea, select { font-family:inherit; }
+
+.accordion {
+  background-color: #eee;
+  color: #444;
+  cursor: pointer;
+  padding: 10px;
+  width: 100%;
+  text-align: right;
+  border: none;
+  outline: none;
+  transition: 0.4s;
+}
+
+/* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+.active, .accordion:hover {
+  background-color: #ccc;
+}
+
+/* Style the accordion panel. Note: hidden by default */
+.panel {
+  padding: 0 18px;
+  background-color: white;
+  display: none;
+  overflow: hidden;
+}
+
+.filter-input{
+  margin: 5px 0px;
+  padding: 1px 0px;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px; /* Adjust spacing between pairs */
+
+}
+/* Style for labels */
+.filter-input label {
+  text-align: right;
+  font-weight: bold;
+  margin-bottom: 5px; /* Adjust spacing between label and input */
+}
+
+/* Style for inputs */
+.filter-input input[type="text"] {
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+/* Style for buttons */
+.button {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.table-container{
+    margin: 10px 10px;
+}
+
+.custom-container{
+    margin: 20px 0px;
+}
+
+table tr th {
+    text-align: right !important;
+}
+
+.responsive-input{
+    width: 100%;
+    max-width: 300px;
+}
+
+.dataTables_filter {
+    display: block;
+    text-align: right;
+}
+
+.dataTables_filter input {
+    width: 100%;
+    max-width: 300px; /* Adjust the maximum width as needed */
+    box-sizing: border-box;
+}
+
+@media (max-width: 767px) {
+    .custom-container{
+        margin: 10px 0px;
+    }
+    .table-container{
+        margin: 10px 0px;
+    }
+    .container .responsive-input {
+        padding: 5px;
+    }
+    .container table td {
+        padding: 5px !important;
+    }
+    .dataTables_filter input {
+        margin: 0 auto !important;
+    }
+    .dataTables_filter input {
+        display: block;
+        width: auto;
+        max-width: 100%; /* Expand to full width of the container */
+        margin-bottom: 10px; /* Add spacing between inputs */
+    }
+}
+
+
+/* Hide the search box */
+.dataTables_filter {
+    display: none;
+}
+
+/* Hide the "Show [X] entries" dropdown */
+.dataTables_length {
+    display: none;
+}
+
+
+
+
